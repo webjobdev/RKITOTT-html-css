@@ -1,0 +1,185 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.dash{background:#0b0e1a;border-radius:16px;padding:24px;font-family:system-ui,-apple-system,sans-serif;color:#fff;width:100%}
+.top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.top-bar-left{display:flex;align-items:center;gap:8px}
+.top-logo{width:28px;height:28px;background:#f55a00;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.top-logo i{font-size:15px;color:#fff}
+.top-title{font-size:13px;font-weight:600;color:#fff}
+.top-sub{font-size:11px;color:rgba(255,255,255,0.35)}
+.live-pill{display:flex;align-items:center;gap:5px;background:rgba(34,197,94,0.12);border:0.5px solid rgba(34,197,94,0.3);border-radius:100px;padding:4px 10px;font-size:11px;color:#4ade80;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:blink 1.5s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.kpi{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 16px}
+.kpi-icon{width:30px;height:30px;border-radius:8px;background:rgba(245,90,0,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.kpi-icon i{font-size:15px;color:#f55a00}
+.kpi-val{font-size:22px;font-weight:800;color:#fff;line-height:1}
+.kpi-lbl{font-size:10px;color:rgba(255,255,255,0.38);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px}
+.kpi-trend{font-size:10px;color:#4ade80;margin-top:6px}
+.mid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.panel{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px}
+.panel-head{display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.panel-head i{font-size:14px;color:#f55a00}
+.panel-head span{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
+.thumb-row{display:flex;flex-direction:column;gap:8px}
+.thumb-item{display:flex;align-items:center;gap:10px}
+.thumb{width:48px;height:34px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.thumb i{font-size:18px;color:rgba(255,255,255,0.7)}
+.thumb-info{flex:1;min-width:0}
+.thumb-title{font-size:12px;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.thumb-meta{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px}
+.thumb-views{font-size:11px;color:#f55a00;font-weight:600;white-space:nowrap}
+.device-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.device-item{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border-radius:8px;padding:8px 10px}
+.device-ic{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.device-ic i{font-size:14px}
+.device-name{font-size:11px;font-weight:500;color:#fff}
+.device-pct{font-size:10px;color:rgba(255,255,255,0.35);margin-top:1px}
+.bottom-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat-pill{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.stat-pill-ic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stat-pill-ic i{font-size:15px}
+.stat-pill-val{font-size:16px;font-weight:800;color:#fff}
+.stat-pill-lbl{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px}
+
+@media(max-width:600px){
+  .dash{padding:16px;border-radius:12px}
+  .kpi-row{grid-template-columns:1fr 1fr;gap:8px}
+  .kpi:last-child{grid-column:1/-1}
+  .kpi{padding:12px}
+  .kpi-val{font-size:18px}
+  .mid{grid-template-columns:1fr;gap:10px}
+  .device-grid{grid-template-columns:repeat(2,1fr)}
+  .bottom-row{grid-template-columns:1fr;gap:8px}
+  .stat-pill{padding:10px 12px}
+}
+@media(max-width:380px){
+  .dash{padding:12px}
+  .kpi-row{grid-template-columns:1fr;gap:8px}
+  .kpi:last-child{grid-column:auto}
+  .device-grid{grid-template-columns:1fr}
+  .top-title{font-size:12px}
+  .kpi-val{font-size:20px}
+}
+</style>
+
+<div class="dash">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="top-logo"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+      <div>
+        <div class="top-title">StreamOS dashboard</div>
+        <div class="top-sub">Platform overview</div>
+      </div>
+    </div>
+    <div class="live-pill"><span class="dot"></span> All systems live</div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <div class="kpi-val">50k+</div>
+      <div class="kpi-lbl">Total viewers</div>
+      <div class="kpi-trend">↑ 12% this month</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+      <div class="kpi-val">99.9%</div>
+      <div class="kpi-lbl">Uptime</div>
+      <div class="kpi-trend">SLA exceeded</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-icon"><i class="ti ti-devices" aria-hidden="true"></i></div>
+      <div class="kpi-val">10+</div>
+      <div class="kpi-lbl">Platforms</div>
+      <div class="kpi-trend">All certified</div>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="panel">
+      <div class="panel-head"><i class="ti ti-device-tv" aria-hidden="true"></i><span>Top content</span></div>
+      <div class="thumb-row">
+        <div class="thumb-item">
+          <div class="thumb" style="background:#1a0a00"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+          <div class="thumb-info">
+            <div class="thumb-title">Season 3 — Episode 1</div>
+            <div class="thumb-meta">Drama · 48 min</div>
+          </div>
+          <div class="thumb-views">24.1k</div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb" style="background:#001a10"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+          <div class="thumb-info">
+            <div class="thumb-title">Live: Championship finals</div>
+            <div class="thumb-meta">Sport · Live now</div>
+          </div>
+          <div class="thumb-views">18.5k</div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb" style="background:#0a001a"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+          <div class="thumb-info">
+            <div class="thumb-title">The Deep Dive — Doc</div>
+            <div class="thumb-meta">Documentary · 1h 12m</div>
+          </div>
+          <div class="thumb-views">9.8k</div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb" style="background:#1a1000"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+          <div class="thumb-info">
+            <div class="thumb-title">Morning show highlights</div>
+            <div class="thumb-meta">News · 22 min</div>
+          </div>
+          <div class="thumb-views">7.3k</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><i class="ti ti-devices" aria-hidden="true"></i><span>Viewers by device</span></div>
+      <div class="device-grid">
+        <div class="device-item">
+          <div class="device-ic" style="background:rgba(28,28,30,0.6)"><i class="ti ti-brand-apple" style="color:#fff;font-size:15px" aria-hidden="true"></i></div>
+          <div><div class="device-name">iOS</div><div class="device-pct">34% of viewers</div></div>
+        </div>
+        <div class="device-item">
+          <div class="device-ic" style="background:rgba(26,127,60,0.25)"><i class="ti ti-device-mobile" style="color:#4ade80;font-size:15px" aria-hidden="true"></i></div>
+          <div><div class="device-name">Android</div><div class="device-pct">27% of viewers</div></div>
+        </div>
+        <div class="device-item">
+          <div class="device-ic" style="background:rgba(245,90,0,0.15)"><i class="ti ti-device-tv" style="color:#f55a00;font-size:15px" aria-hidden="true"></i></div>
+          <div><div class="device-name">Smart TV</div><div class="device-pct">22% of viewers</div></div>
+        </div>
+        <div class="device-item">
+          <div class="device-ic" style="background:rgba(100,120,255,0.15)"><i class="ti ti-brand-amazon" style="color:#93a3f8;font-size:15px" aria-hidden="true"></i></div>
+          <div><div class="device-name">Fire TV</div><div class="device-pct">10% of viewers</div></div>
+        </div>
+        <div class="device-item">
+          <div class="device-ic" style="background:rgba(108,29,163,0.2)"><i class="ti ti-device-tv" style="color:#c084fc;font-size:15px" aria-hidden="true"></i></div>
+          <div><div class="device-name">Roku</div><div class="device-pct">5% of viewers</div></div>
+        </div>
+        <div class="device-item">
+          <div class="device-ic" style="background:rgba(26,115,232,0.15)"><i class="ti ti-world" style="color:#60a5fa;font-size:15px" aria-hidden="true"></i></div>
+          <div><div class="device-name">Web</div><div class="device-pct">2% of viewers</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="stat-pill">
+      <div class="stat-pill-ic" style="background:rgba(245,90,0,0.12)"><i class="ti ti-video" style="color:#f55a00" aria-hidden="true"></i></div>
+      <div><div class="stat-pill-val">1,240</div><div class="stat-pill-lbl">Videos published</div></div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-pill-ic" style="background:rgba(34,197,94,0.12)"><i class="ti ti-live-view" style="color:#4ade80" aria-hidden="true"></i></div>
+      <div><div class="stat-pill-val">3 live</div><div class="stat-pill-lbl">Active streams</div></div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-pill-ic" style="background:rgba(96,165,250,0.12)"><i class="ti ti-clock" style="color:#60a5fa" aria-hidden="true"></i></div>
+      <div><div class="stat-pill-val">3.4h</div><div class="stat-pill-lbl">Avg watch time</div></div>
+    </div>
+  </div>
+</div>
