@@ -1,35 +1,33 @@
 <link
   rel="stylesheet"
-  href="css.css"
-/>
-<link
-  rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
 />
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
   --orange:#f55a00;
   --dark:#0b0e1a;
   --dark2:#0b0e1a;
   --white:#fff;
-  --white65:#fff;
-  --white50:#fff;
-  --white10:#fff;
-  --white04:#fff;
-  --white06:#fff;
+  --white65:rgba(255,255,255,0.65);
+  --white50:rgba(255,255,255,0.5);
+  --white10:rgba(255,255,255,0.1);
+  --white04:rgba(255,255,255,0.04);
+  --white06:rgba(255,255,255,0.06);
   --light:#f7f8fc;
   --border-light:#e8eaf0;
 }
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--dark)}
 .eyebrow{font-size:18px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
-.sec-dark{background:var(--dark);padding:50px 130px}
-.sec-mid{background:var(--dark);padding:50px 130px}
-.sec-light{background:var(--light);padding:50px 130px}
-.sec-orange{background:var(--orange);padding:50px 130px}
+.sec-dark{background:var(--dark);padding:100px 130px}
+.sec-mid{background:var(--dark);padding:100px 130px}
+.sec-light{background:var(--light);padding:100px 130px}
+.sec-orange{background:var(--orange);padding:72px 130px}
 
 /* HERO */
-.hero{background:var(--dark);padding:50px 130px 50px;position:relative;overflow:hidden}
+.hero{background:var(--dark);padding:110px 130px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-120px;right:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(245,90,0,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
 .hero-h1{font-size:56px;font-weight:800 !important;line-height:1.1;color:#fff;margin-bottom:22px}
 .hero-h1 span{color:var(--orange) !important}
 .hero-body{font-size:22px;line-height:1.7;color:var(--white65);max-width:580px;margin-bottom:36px}
@@ -100,7 +98,7 @@
 /* WHAT SETS US APART */
 .apart-h2{font-size:50px;font-weight:800 !important;color:#fff;line-height:1.2;margin-bottom:8px}
 .apart-sub{font-size:22px;color:var(--white65);max-width:540px;margin-bottom:44px}
-.apart-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.apart-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .apart-card{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);border-radius:14px;padding:22px}
 .apart-icon{width:50px;height:50px;background:rgba(245,90,0,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .apart-icon i{font-size:20px;color:var(--orange)}
@@ -147,6 +145,8 @@
 }
 </style>
 
+<h2 class="sr-only">OTT Apps Creation About Page Hero, Mission, Process, and Differentiators</h2>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -161,8 +161,8 @@
     </div>
     <div class="hero-visual">
       <div class="hero-badge hero-badge-top">
-        <div class="hero-badge-icon"><i class="ti ti-briefcase" aria-hidden="true"></i></div>
-        <div><strong>50+</strong><span>Projects Delivered</span></div>
+        <div class="hero-badge-icon"><i class="ti ti-devices" aria-hidden="true"></i></div>
+        <!-- <div><strong>10+</strong><span>Device platforms</span></div> -->
       </div>
       <div class="device-frame">
         <div class="device-topbar">
@@ -172,7 +172,7 @@
         </div>
         <div class="device-screen">
           <div class="device-hero-row">
-            <!-- <div class="device-brand">STREAM<span>+</span></div> -->
+            <div class="device-brand">STREAM<span>+</span></div>
             <div class="device-live"><span class="device-live-dot"></span>LIVE</div>
           </div>
           <div class="device-feature">
@@ -190,8 +190,8 @@
         </div>
       </div>
       <div class="hero-badge hero-badge-bottom">
-        <div class="hero-badge-icon"><i class="ti ti-code" aria-hidden="true"></i></div>
-        <div><strong>45+</strong><span>Skilled Developers</span></div>
+        <div class="hero-badge-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <div><strong>45+</strong><span>Development</span></div>
       </div>
     </div>
   </div>
@@ -311,20 +311,20 @@
 <section class="sec-orange">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-n">100+</div>
-      <div class="stat-l">Happy Clients</div>
-    </div>
-    <div class="stat-item">
       <div class="stat-n">50+</div>
-      <div class="stat-l">Projects Delivered</div>
+      <div class="stat-l">OTT platforms launched</div>
     </div>
     <div class="stat-item">
-      <div class="stat-n">35+</div>
-      <div class="stat-l">Skilled Developers</div>
+      <div class="stat-n">45+</div>
+      <div class="stat-l">Development</div>
     </div>
     <div class="stat-item">
-      <div class="stat-n">24/7</div>
-      <div class="stat-l">Technical Support</div>
+      <div class="stat-n">10+</div>
+      <div class="stat-l">Device platforms</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">99.9%</div>
+      <div class="stat-l">Average uptime</div>
     </div>
   </div>
 </section>

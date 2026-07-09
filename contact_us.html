@@ -1,0 +1,173 @@
+<link rel="stylesheet" href="css.css" />
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  .svc-section {
+    padding: 50px 0px;
+    background: #0b0e1a;
+  }
+  .svc-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+  .svc-eyebrow {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff6b00;
+    margin-bottom: 14px;
+  }
+  .svc-title {
+    font-size: 60px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .svc-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition:
+      border-color 0.25s ease,
+      transform 0.25s ease,
+      background 0.25s ease;
+  }
+  .svc-card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+  }
+  .svc-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    background: rgba(255, 107, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .svc-icon i {
+    font-size: 22px;
+    color: #ff6b00;
+  }
+  .svc-card h3 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .svc-card > p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .svc-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 16px;
+  }
+  .svc-ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .svc-ul li:last-child {
+    margin-bottom: 0;
+  }
+  .svc-ul li i {
+    font-size: 18px;
+    color: #ff6b00;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 991px) {
+    .svc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 700px) {
+    .svc-section {
+      padding: 15px 20px;
+    }
+    .svc-grid {
+      grid-template-columns: 1fr;
+    }
+    .svc-title {
+      font-size: 28px;
+    }
+  }
+.service-new-sec {
+  padding: 50px 130px 20px;
+}
+.service-showcase-header {
+  text-align: center;
+  margin: 0 auto 48px;
+}
+.service-body-copy { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.65);}
+</style>
+
+<section class="service-new-sec showcase-sec">
+  <div class="service-showcase-header">
+    <h2 class="split-h2">Let's Talk About Your Streaming Platform</h2>
+    <p class="service-body-copy" style="margin: 0 auto">Have a project in mind or just exploring what's possible? We'd love to hear about your content and your goals. Reach out and our OTT specialists will get back to you within 48 hours with answers and, if you're ready, a custom platform proposal.
+    </p>
+  </div>
+</section>
+
+<section class="svc-section">
+   <div class="showcase-header">
+    <h2 class="split-h2">Ways to Reach Us</h2>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="ti ti-mail" aria-hidden="true"></i>
+      </div>
+      <h3>Email</h3>
+      <p>
+        Tell us about your project and we'll respond within 48 hours.
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="ti ti-phone-call" aria-hidden="true"></i>
+      </div>
+      <h3>Phone</h3>
+      <p>
+        Prefer to talk it through? Schedule a call with an OTT specialist.
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+       <i class="ti ti-calendar-event" aria-hidden="true"></i>
+      </div>
+      <h3>Book a Demo</h3>
+      <p>
+        Book a free, no-obligation discovery session at a time that suits you.
+      </p>
+    </div>
+  </div>
+</section>
+
+

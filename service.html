@@ -7,8 +7,8 @@
 
 <style>
   .svc-section {
-    padding: 90px 0px;
-    background: #111520;
+    padding: 50px 0px;
+    background: #0b0e1a;
   }
   .svc-header {
     text-align: center;
@@ -32,7 +32,7 @@
   .svc-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 10px;
     max-width: 1180px;
     margin: 0 auto;
   }
@@ -110,7 +110,7 @@
   }
   @media (max-width: 700px) {
     .svc-section {
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
     .svc-grid {
       grid-template-columns: 1fr;
@@ -124,7 +124,7 @@
   .ott-3d-wrap {
     position: relative;
     padding: 80px 40px;
-    background: #111520;
+    background: #0b0e1a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,7 +196,7 @@
   }
   .ott-play-btn i {
     font-size: 24px;
-    color: #111520;
+    color: #0b0e1a;
     margin-left: 3px;
   }
 
@@ -361,8 +361,8 @@
 <style>
   .ott-hero {
     position: relative;
-    padding: 100px 40px;
-    background: #111520;
+    padding: 70px 40px 40px;
+    background: #0b0e1a;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -493,7 +493,7 @@
   }
   .ott-play-btn i {
     font-size: 22px;
-    color: #111520;
+    color: #0b0e1a;
     margin-left: 3px;
   }
   .ott-bars {
@@ -650,7 +650,7 @@
   }
   .ott-phone-icon i {
     font-size: 14px;
-    color: #111520;
+    color: #0b0e1a;
   }
   .ott-phone-line {
     width: 60%;
@@ -759,7 +759,7 @@
 /* ==================================================
    GLOBAL THEME STYLING
 ================================================== */
-.pg-preloader { background-color: #111520 !important; }
+.pg-preloader { background-color: #0b0e1a !important; }
 
 .sr-breadcrumb-list { background: #010a0f !important; }
 .sr-breadcrumb-list a::after {
@@ -776,27 +776,20 @@
 #wpd-post-rating .wpd-rating-wrap .wpd-rating-value span { color: #666666 !important; }
 .wa-offcanvas-area { background: linear-gradient(135deg, #232526, #414345) !important; }
 
-.pg { font-family: var(--font-sans); background: #0b0e1a; color: #fff; border-radius: 16px; overflow: hidden; }
+.pg { font-family: var(--font-sans); background: #0b0e1a; color: #fff; border-radius: 0px; overflow: hidden; }
 .btn-primary { background: #f55a00; color: #fff; border: none; padding: 11px 22px; border-radius: 8px; font-size: 18px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .btn-ghost { background: rgba(255,255,255,0.07); color: #fff; border: 0.5px solid rgba(255,255,255,0.18); padding: 11px 22px; border-radius: 8px; font-size: 18px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-.sec { padding: 64px 40px; }
+.sec { padding: 60px 40px; }
 .sec-light { background: #f7f8fc; color: #0b0e1a; }
 .sec-white { background: #fff; color: #0b0e1a; }
 .eyebrow { font-size: 18px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #f55a00; margin-bottom: 12px; }
 .sec-light .eyebrow, .sec-white .eyebrow { color: #f55a00; }
-.h2 { font-size: 40px; font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
 .sec-light .h2, .sec-white .h2 { color: #0b0e1a; }
 .body-copy { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.65); max-width: 560px; }
 .sec-light .body-copy, .sec-white .body-copy { color: #555 !important; }
 
-.new-sec { padding: 130px 130px; }
 .service-sec { padding: 130px 0px; }
-@media (max-width:1024px){ .new-sec{padding:60px 60px;} .service-sec{padding:60px 0px;} .feat-item h4{font-size:24px;font-weight:900;} .feat-item p{font-size:21px;} }
-@media (max-width:991px){ .new-sec{padding:100px 100px;} .service-sec{padding:100px 0px;} }
-@media (max-width:768px){ .new-sec{padding:30px 30px;} .service-sec{padding:30px 0px;} }
-@media (max-width:767px){ .new-sec{padding:80px 20px;} .service-sec{padding:80px 0px;} }
-@media (max-width:480px){ .new-sec{padding:60px 15px;} .service-sec{padding:60px 0px;} }
-
+@media (max-width:1024px){ .service-sec{padding:60px 0px;} .feat-item h4{font-size:24px;font-weight:900;} .feat-item p{font-size:21px;} }
 
 .plat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px; }
 .plat-card { background: #fff; border: 0.5px solid #e8eaf0; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
@@ -868,15 +861,6 @@
    need markup + rules beyond the base stylesheet)
 ================================================== */
 
-/* top stat strip */
-.top-stats { background:#0b0e1a; padding: 28px 40px; }
-.top-stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; max-width:1100px; margin:0 auto; }
-.top-stat .icon-wrap { width:54px;height:54px;border-radius:50%;background:rgba(245,90,0,0.12); display:flex;align-items:center;justify-content:center;margin:0 auto 10px; }
-.top-stat .icon-wrap i { color:#f55a00; font-size:22px; }
-.top-stat .num { font-size:26px; font-weight:800; color:#fff; }
-.top-stat .lbl { font-size:13px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
-@media (max-width:767px){ .top-stats-row{grid-template-columns:repeat(2,1fr);} }
-
 /* hero */
 .hero-sec { padding: 60px 40px 20px; }
 .hero-inner { display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; max-width:1200px; margin:0 auto; }
@@ -936,35 +920,27 @@
 .section-head { text-align:center; max-width:640px; margin:0 auto 10px; }
 .center { text-align:center; }
 .mx-auto { margin-left:auto; margin-right:auto; }
+
+.service-new-sec {
+  padding: 50px 130px 20px;
+}
+.service-showcase-header {
+  text-align: center;
+  margin: 0 auto 48px;
+}
+.service-body-copy { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.65);}
 </style>
 
-<div class="pg">
-<!-- Top stats strip -->
-  <section class="top-stats">
-    <div class="top-stats-row">
-      <div class="top-stat">
-        <div class="icon-wrap"><i class="fa-solid fa-users"></i></div>
-        <div class="num">55k+</div>
-        <div class="lbl">Active Users</div>
-      </div>
-      <div class="top-stat">
-        <div class="icon-wrap"><i class="fa-solid fa-medal"></i></div>
-        <div class="num">43%</div>
-        <div class="lbl">User Retention</div>
-      </div>
-      <div class="top-stat">
-        <div class="icon-wrap"><i class="fa-solid fa-star"></i></div>
-        <div class="num">4.9/5</div>
-        <div class="lbl">Average Ratings</div>
-      </div>
-      <div class="top-stat">
-        <div class="icon-wrap"><i class="fa-solid fa-server"></i></div>
-        <div class="num">97.5%</div>
-        <div class="lbl">Uptime</div>
-      </div>
-    </div>
-  </section>
+<section class="service-new-sec showcase-sec">
+  <div class="service-showcase-header">
+    <h2 class="split-h2">End-to-End OTT Services  From First Build to Full Scale</h2>
+    <p class="service-body-copy" style="margin: 0 auto">Everything you need to launch and grow a streaming business under one roof. We design, build, secure, and support branded OTT platforms across every device so you can focus on your content while we handle the technology.
+    </p>
+  </div>
+</section>
 
+
+<div class="pg">
   <!-- Hero -->
   <section class="hero-sec">
     <div class="hero-inner">

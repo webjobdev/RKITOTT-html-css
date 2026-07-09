@@ -1,293 +1,1110 @@
-<link
-  rel="stylesheet"
-  href="css.css"
-/>
+<link rel="stylesheet" href="css.css" />
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
 />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<section class="new-sec" style="background: #0b0e1a">
-  <div class="split-header">
+<style>
+  .svc-section {
+    padding: 50px 0px;
+    background: #0b0e1a;
+  }
+  .svc-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+  .svc-eyebrow {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff6b00;
+    margin-bottom: 14px;
+  }
+  .svc-title {
+    font-size: 60px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .svc-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition:
+      border-color 0.25s ease,
+      transform 0.25s ease,
+      background 0.25s ease;
+  }
+  .svc-card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+  }
+  .svc-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    background: rgba(255, 107, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .svc-icon i {
+    font-size: 22px;
+    color: #ff6b00;
+  }
+  .svc-card h3 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .svc-card > p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .svc-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 16px;
+  }
+  .svc-ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .svc-ul li:last-child {
+    margin-bottom: 0;
+  }
+  .svc-ul li i {
+    font-size: 18px;
+    color: #ff6b00;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 991px) {
+    .svc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 700px) {
+    .svc-section {
+      padding: 15px 20px;
+    }
+    .svc-grid {
+      grid-template-columns: 1fr;
+    }
+    .svc-title {
+      font-size: 28px;
+    }
+  }
+</style>
+<style>
+  .ott-3d-wrap {
+    position: relative;
+    padding: 80px 40px;
+    background: #0b0e1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1400px;
+  }
+
+  .ott-3d-stage {
+    position: relative;
+    width: 480px;
+    height: 360px;
+    transform-style: preserve-3d;
+    transform: rotateY(-18deg) rotateX(8deg);
+    animation: ott-float 6s ease-in-out infinite;
+  }
+
+  @keyframes ott-float {
+    0%,
+    100% {
+      transform: rotateY(-18deg) rotateX(8deg) translateY(0px);
+    }
+    50% {
+      transform: rotateY(-15deg) rotateX(6deg) translateY(-14px);
+    }
+  }
+
+  /* TV body */
+  .ott-tv {
+    position: absolute;
+    width: 420px;
+    height: 260px;
+    left: 30px;
+    top: 20px;
+    background: linear-gradient(145deg, #1c2233, #0d1019);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 40px 80px -20px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(255, 255, 255, 0.03),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    transform: translateZ(0px);
+    overflow: hidden;
+  }
+
+  /* screen content */
+  .ott-screen {
+    position: absolute;
+    inset: 14px;
+    border-radius: 10px;
+    background: linear-gradient(160deg, #1a2236 0%, #0c1018 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 30px rgba(255, 107, 0, 0.06);
+  }
+
+  .ott-play-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #ff6b00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 0 0 8px rgba(255, 107, 0, 0.12),
+      0 12px 30px rgba(255, 107, 0, 0.4);
+    margin-bottom: 18px;
+  }
+  .ott-play-btn i {
+    font-size: 24px;
+    color: #0b0e1a;
+    margin-left: 3px;
+  }
+
+  .ott-screen-bars {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+    height: 30px;
+  }
+  .ott-screen-bars span {
+    width: 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    animation: ott-bar 1.6s ease-in-out infinite;
+  }
+  .ott-screen-bars span:nth-child(1) {
+    height: 12px;
+    animation-delay: 0s;
+  }
+  .ott-screen-bars span:nth-child(2) {
+    height: 24px;
+    animation-delay: 0.2s;
+    background: #ff6b00;
+  }
+  .ott-screen-bars span:nth-child(3) {
+    height: 16px;
+    animation-delay: 0.4s;
+  }
+  .ott-screen-bars span:nth-child(4) {
+    height: 28px;
+    animation-delay: 0.1s;
+    background: #ff6b00;
+  }
+  .ott-screen-bars span:nth-child(5) {
+    height: 10px;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes ott-bar {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.4);
+    }
+  }
+
+  /* TV stand */
+  .ott-stand {
+    position: absolute;
+    left: 50%;
+    bottom: -32px;
+    transform: translateX(-50%) translateZ(-10px);
+    width: 90px;
+    height: 14px;
+    background: linear-gradient(180deg, #2a3142, #14171f);
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  .ott-stand::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -34px;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 34px;
+    background: linear-gradient(180deg, #2a3142, #14171f);
+  }
+
+  /* floating device cards around the TV */
+  .ott-floater {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+  }
+  .ott-floater i {
+    font-size: 20px;
+    color: #ff6b00;
+  }
+  .ott-floater span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .ott-f1 {
+    top: -28px;
+    right: -40px;
+    transform: translateZ(80px);
+    animation: ott-float2 5s ease-in-out infinite;
+  }
+  .ott-f2 {
+    bottom: 10px;
+    right: -60px;
+    transform: translateZ(60px);
+    animation: ott-float2 5s ease-in-out infinite 1.2s;
+  }
+  .ott-f3 {
+    top: 60px;
+    left: -50px;
+    transform: translateZ(70px);
+    animation: ott-float2 5s ease-in-out infinite 0.6s;
+  }
+
+  @keyframes ott-float2 {
+    0%,
+    100% {
+      transform: translateZ(70px) translateY(0px);
+    }
+    50% {
+      transform: translateZ(70px) translateY(-10px);
+    }
+  }
+
+  /* ambient glow behind everything */
+  .ott-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateZ(-100px);
+    background: radial-gradient(
+      circle,
+      rgba(255, 107, 0, 0.18) 0%,
+      transparent 70%
+    );
+    filter: blur(20px);
+  }
+
+  @media (max-width: 600px) {
+    .ott-3d-wrap {
+      padding: 50px 20px;
+    }
+    .ott-3d-stage {
+      width: 320px;
+      height: 240px;
+      transform: rotateY(-12deg) rotateX(6deg) scale(0.85);
+    }
+    .ott-tv {
+      width: 280px;
+      height: 180px;
+      left: 20px;
+      top: 14px;
+    }
+    .ott-floater span {
+      display: none;
+    }
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<div class="logo-strip">
+  <div class="logo-strip-label">
+    Trusted certifications &amp; global partnerships
+  </div>
+  <div class="logo-row">
+    <span class="cert-badge"
+      ><i class="ti ti-shield-check" aria-hidden="true"></i> AWS Partner</span
+    >
+    <span class="cert-badge"
+      ><i class="ti ti-certificate" aria-hidden="true"></i> ISO 27001</span
+    >
+    <span class="cert-badge"
+      ><i class="ti ti-cloud" aria-hidden="true"></i> Google Cloud</span
+    >
+    <span class="cert-badge"
+      ><i class="ti ti-lock" aria-hidden="true"></i> GDPR Compliant</span
+    >
+    <span class="cert-badge"
+      ><i class="ti ti-shield" aria-hidden="true"></i> PCI-DSS</span
+    >
+    <span class="cert-badge"
+      ><i class="ti ti-accessible" aria-hidden="true"></i> ADA / VPAT</span
+    >
+  </div>
+</div>
+
+<section class="svc-section">
+  <div class="showcase-header">
+    <h2 class="split-h2">Everything You Need to Stream,Scale and Earn</h2>
+    <p class="body-copy" style="margin: 0 auto">
+      From the first upload to your millionth viewer, our platform gives you the
+      tools to run a professional streaming service without stitching together a
+      dozen separate vendors
+    </p>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="ti ti-devices" aria-hidden="true"></i>
+      </div>
+      <h3>Multi-Platform Native Apps</h3>
+      <p>
+        Real native apps for every major device — iOS, Android, Apple TV,
+        Samsung, LG, Roku, Fire TV, and web. We build, certify, and submit each
+        one, so your brand looks and feels right everywhere your audience
+        watches.
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="ti ti-shield-lock" aria-hidden="true"></i>
+      </div>
+      <h3>Studio-Grade Content Security</h3>
+      <p>
+        Protect every stream with multi-DRM (Widevine, FairPlay, PlayReady),
+        AES-128 encryption, geo-blocking, and forensic watermarking — the same
+        level of protection trusted by the world's biggest streaming services.
+      </p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="ti ti-currency-dollar" aria-hidden="true"></i>
+      </div>
+      <h3>Flexible Monetization</h3>
+      <p>
+        Earn your way with subscriptions (SVOD), ads (AVOD), pay-per-view
+        (TVOD), or a hybrid mix. Support for 135+ currencies, in-app purchases,
+        and full subscription management is built in from day one.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="new-sec showcase-sec" style="background: #0b0e1a">
+  <div class="showcase-header">
     <div class="eyebrow">PLATFORM HIGHLIGHTS</div>
-    <h2 class="split-h2">
-      One Streaming Business. &amp; Every Screen Covered.
-    </h2>
-    <p>Manage your entire service from a single dashboard while we keep your apps running smoothly on every device your viewers own.</p>
+    <h2 class="split-h2">One Streaming Business. Every Screen Covered.</h2>
+    <p class="body-copy" style="margin: 0 auto">
+      Manage your entire service from a single dashboard while we keep your apps
+      running smoothly on every device your viewers own.
+    </p>
   </div>
-  <div class="split">
-    <div class="split-visual">
-      <div class="mock-bar">
-        <i class="ti ti-chart-bar" aria-hidden="true"></i> Analytics dashboard
-      </div>
-      <div class="mock-stat-row">
-        <div class="mock-stat">
-          <div class="n">50k+</div>
-          <div class="l">Total viewers</div>
+    <div class="ott-3d-wrap">
+      <div class="ott-3d-stage">
+        <div class="ott-glow"></div>
+        <div class="ott-tv">
+          <div class="ott-screen">
+            <div class="ott-play-btn">
+              <i class="ti ti-player-play-filled" aria-hidden="true"></i>
+            </div>
+            <div class="ott-screen-bars">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
         </div>
-        <div class="mock-stat">
-          <div class="n">99.9%</div>
-          <div class="l">Uptime</div>
+        <div class="ott-stand"></div>
+        <div class="ott-floater ott-f1">
+          <i class="ti ti-device-mobile" aria-hidden="true"></i><span>Mobile app</span>
         </div>
-        <div class="mock-stat">
-          <div class="n">10+</div>
-          <div class="l">Platforms</div>
+        <div class="ott-floater ott-f2">
+          <i class="ti ti-device-tv" aria-hidden="true"></i><span>Smart TV</span>
         </div>
-      </div>
-      <div class="mock-bar" style="margin-top: 4px">
-        <i class="ti ti-activity" aria-hidden="true"></i> Live viewer engagement
-      </div>
-      <div class="mock-chart">
-        <div class="bar-item" style="height: 40%"></div>
-        <div class="bar-item" style="height: 60%"></div>
-        <div class="bar-item" style="height: 45%"></div>
-        <div class="bar-item hi" style="height: 80%"></div>
-        <div class="bar-item" style="height: 55%"></div>
-        <div class="bar-item hi" style="height: 90%"></div>
-        <div class="bar-item" style="height: 70%"></div>
-        <div class="bar-item" style="height: 65%"></div>
-        <div class="bar-item hi" style="height: 85%"></div>
-        <div class="bar-item" style="height: 50%"></div>
+        <div class="ott-floater ott-f3">
+          <i class="ti ti-antenna" aria-hidden="true"></i><span>Live stream</span>
+        </div>
       </div>
     </div>
-    <div>
-      <div class="feat-list">
-        <div class="feat-item">
-          <div class="feat-item-icon">
-            <i class="ti ti-brain" aria-hidden="true"></i>
+  </section>
+
+  <section class="new-sec sec-black">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-brain" aria-hidden="true"></i>
+        </div>
+        <h3>AI-powered recommendations</h3>
+        <p>
+          Complete, branded streaming platforms with true native apps for every
+          major device.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-database" aria-hidden="true"></i>
+        </div>
+        <h3>Unified content management</h3>
+        <p>
+          Upload, transcode, schedule, and publish across every platform from
+          one place.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-broadcast" aria-hidden="true"></i>
+        </div>
+        <h3>Unified content management</h3>
+        <p>
+          Ultra-low latency, cloud DVR, real-time chat, automatic live-to-VOD
+          archiving.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="new-sec sec-light">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto">
+      <div class="eyebrow">Platforms we build for</div>
+      <div class="h2">Native Apps for Every Major Device.</div>
+    </div>
+    <div class="plat-grid">
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #f0f0f0">
+            <i
+              class="ti ti-brand-apple"
+              style="font-size: 20px; color: #1c1c1e"
+              aria-hidden="true"
+            ></i>
           </div>
           <div>
-            <h4>AI-powered content recommendations</h4>
-            <p>
-              Machine learning studies what each viewer enjoys and recommends content they'll love — lifting watch time and keeping subscribers around longer.
-            </p>
+            <div class="plat-name">iOS</div>
+            <div class="plat-os">iPhone &amp; iPad</div>
           </div>
         </div>
-        <div class="feat-item">
-          <div class="feat-item-icon">
-            <i class="ti ti-layout-dashboard" aria-hidden="true"></i>
+        <p class="plat-desc">
+          Native Swift app — AirPlay, offline downloads, Picture-in-Picture,
+          FairPlay DRM.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          App Store certified</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #e8fdf0">
+            <i
+              class="ti ti-device-mobile"
+              style="font-size: 20px; color: #1a7f3c"
+              aria-hidden="true"
+            ></i>
           </div>
           <div>
-            <h4>Unified content management system</h4>
-            <p>
-              Upload, transcode, schedule, and publish across every platform from one place, with bulk uploads and full series management.Upload, transcode, schedule, and publish across every platform from one place, with bulk uploads and full series management.
-            </p>
+            <div class="plat-name">Android</div>
+            <div class="plat-os">Smartphones &amp; tablets</div>
           </div>
         </div>
-        <div class="feat-item">
-          <div class="feat-item-icon">
-            <i class="ti ti-live-view" aria-hidden="true"></i>
+        <p class="plat-desc">
+          Native Kotlin app — Chromecast, all screen sizes, Widevine DRM, Google
+          Play certified.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Google Play certified</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #f5f5f5">
+            <i
+              class="ti ti-device-tv"
+              style="font-size: 20px; color: #1c1c1e"
+              aria-hidden="true"
+            ></i>
           </div>
           <div>
-            <h4>Live Streaming with DVR & Chat</h4>
-            <p>
-              Stream live with ultra-low latency, cloud DVR, real-time chat, and automatic live-to-VOD archiving.
-            </p>
+            <div class="plat-name">Apple TV</div>
+            <div class="plat-os">tvOS</div>
           </div>
         </div>
-        <div class="feat-item">
-          <div class="feat-item-icon">
-            <i class="ti ti-world" aria-hidden="true"></i>
+        <p class="plat-desc">
+          Native tvOS app — Siri integration, Top Shelf API, cinematic lean-back
+          experience.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Apple TV App Store</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #eef0ff">
+            <i
+              class="ti ti-device-tv"
+              style="font-size: 20px; color: #1428a0"
+              aria-hidden="true"
+            ></i>
           </div>
           <div>
-            <h4>Global CDN Delivery</h4>
-            <p>
-              Deliver buffer-free 4K from 200+ edge locations worldwide, with adaptive streaming that adjusts to every connection.
-            </p>
+            <div class="plat-name">Samsung Smart TV</div>
+            <div class="plat-os">Tizen OS</div>
+          </div>
+        </div>
+        <p class="plat-desc">
+          Native Tizen app — optimised for Samsung remote, Samsung TV App Store
+          certified.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Samsung TV certified</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #fff0f0">
+            <i
+              class="ti ti-device-tv"
+              style="font-size: 20px; color: #a50034"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div>
+            <div class="plat-name">LG Smart TV</div>
+            <div class="plat-os">webOS</div>
+          </div>
+        </div>
+        <p class="plat-desc">
+          Native webOS app — Magic Remote &amp; voice control, LG Content Store
+          certified.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          LG Content Store</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #f3eeff">
+            <i
+              class="ti ti-device-tv"
+              style="font-size: 20px; color: #6c1da3"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div>
+            <div class="plat-name">Roku</div>
+            <div class="plat-os">Brightscript / SceneGraph</div>
+          </div>
+        </div>
+        <p class="plat-desc">
+          Native Roku channel — #1 US streaming platform, Roku Channel Store
+          certified.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Roku Channel Store</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #fff8e8">
+            <i
+              class="ti ti-brand-amazon"
+              style="font-size: 20px; color: #e47911"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div>
+            <div class="plat-name">Amazon Fire TV</div>
+            <div class="plat-os">Fire OS</div>
+          </div>
+        </div>
+        <p class="plat-desc">
+          Native Fire TV app — Alexa voice control, Amazon Appstore certified.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Amazon Appstore</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #e8f4ff">
+            <i
+              class="ti ti-device-tv"
+              style="font-size: 20px; color: #00448c"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div>
+            <div class="plat-name">Android TV</div>
+            <div class="plat-os">Google TV</div>
+          </div>
+        </div>
+        <p class="plat-desc">
+          Native Android TV app — Google Assistant, D-pad navigation, Play for
+          TV certified.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Play for TV certified</span
+        >
+      </div>
+      <div class="plat-card">
+        <div class="plat-card-head">
+          <div class="plat-icon" style="background: #e8f0ff">
+            <i
+              class="ti ti-world"
+              style="font-size: 20px; color: #1a73e8"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div>
+            <div class="plat-name">Web browser</div>
+            <div class="plat-os">All browsers</div>
+          </div>
+        </div>
+        <p class="plat-desc">
+          Responsive web app — HLS/DASH, HTML5 player, PWA support, all modern
+          browsers.
+        </p>
+        <span class="plat-cert"
+          ><i
+            class="ti ti-check"
+            style="font-size: 10px"
+            aria-hidden="true"
+          ></i>
+          Cross-browser ready</span
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="new-sec sec-black">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto">
+      <div class="eyebrow">WHY CHOOSE US</div>
+      <div class="h2" style="color: white">
+        The Streaming Specialists Behind Your Launch
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-devices" aria-hidden="true"></i>
+        </div>
+        <h3>Native on every platform</h3>
+        <p>
+          True native apps — never web wrappers — so each one feels exactly
+          right on every device and OS version.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-rocket" aria-hidden="true"></i>
+        </div>
+        <h3>Launch in 6–10 weeks</h3>
+        <p>
+          Our proven OTT framework gets you to market fast without cutting
+          corners on quality or security.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-shield-lock" aria-hidden="true"></i>
+        </div>
+        <h3>Studio-grade security</h3>
+        <p>
+          Multi-DRM, forensic watermarking, and geo-blocking protect your
+          content the way the major studios protect theirs.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-file-certificate" aria-hidden="true"></i>
+        </div>
+        <h3>Full app store management</h3>
+        <p>
+          We handle every submission, certification, and approval across every
+          platform — from Apple to Roku — so you don't have to.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <i class="ti ti-headset" aria-hidden="true"></i>
+        </div>
+        <h3>24/7 post-launch support</h3>
+        <p>
+          We stay with you as you grow, monitoring, updating, and optimizing
+          your platform long after launch day.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="ti ti-key" aria-hidden="true"></i></div>
+        <h3>You own everything</h3>
+        <p>
+          Your code, your subscribers, your data. No SaaS lock-in, no monthly
+          platform fees, no strings attached.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-sec new-sec">
+    <div class="stats-inner">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-num">100+</div>
+          <div class="stat-lbl">Happy Clients</div>
+        </div>
+        <div>
+          <div class="stat-num">50+</div>
+          <div class="stat-lbl">Projects Delivered</div>
+        </div>
+        <div>
+          <div class="stat-num">35+</div>
+          <div class="stat-lbl">Skilled Developers</div>
+        </div>
+        <div>
+          <div class="stat-num">24/7</div>
+          <div class="stat-lbl">Technical Support</div>
+        </div>
+      </div>
+      <div></div>
+      <div class="stats-quote">
+        "From startups to enterprises, we deliver custom software, web, and
+        mobile solutions that accelerate business success."
+      </div>
+    </div>
+  </div>
+
+  <section class="sec sec-white new-sec">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto">
+      <div class="eyebrow">TESTIMONIALS</div>
+      <div class="h2">Success Stories From Our Streaming Partners</div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">
+          <i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i>
+        </div>
+        <p class="testi-quote">
+          “We launched on iOS, Android, Roku, and Apple TV in under eight weeks.
+          Our digital subscriptions are now our fastest-growing source of
+          revenue.”
+        </p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background: #e6f1fb; color: #0c447c">
+            HD
+          </div>
+          <div>
+            <div class="testi-name">Head of Digital</div>
+            <div class="testi-role">Regional Broadcasting Network</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i>
+        </div>
+        <p class="testi-quote">
+          “On match night the platform handled 200,000 viewers at once without a
+          single complaint. That kind of reliability changes everything for us."
+        </p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background: #eaf3de; color: #27500a">
+            CO
+          </div>
+          <div>
+            <div class="testi-name">Chief Operating Officer</div>
+            <div class="testi-role">Sports Streaming Network</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i
+          ><i class="ti ti-star" aria-hidden="true"></i>
+        </div>
+        <p class="testi-quote">
+          “I have my own branded app on Roku, Apple TV, iOS, and Android. My
+          subscribers are mine and my revenue is mine — the best decision I ever
+          made."
+        </p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background: #faeeda; color: #633806">
+            IC
+          </div>
+          <div>
+            <div class="testi-name">Independent Creator</div>
+            <div class="testi-role">Documentary Filmmaker</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<section class="new-sec sec-light">
-  <div style="text-align:center;max-width:600px;margin:0 auto">
-    <div class="eyebrow">Platforms we build for</div>
-    <div class="h2">Native Apps for Every Major Device.</div>
-    <p class="body-copy" style="margin:0 auto">We build, certify, and maintain true native streaming apps — not web wrappers — so your audience gets a fast, polished experience wherever they press play.</p>
-  </div>
-  <div class="plat-grid">
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#f0f0f0"><i class="ti ti-brand-apple" style="font-size:20px;color:#1c1c1e" aria-hidden="true"></i></div><div><div class="plat-name">iOS</div><div class="plat-os">iPhone &amp; iPad</div></div></div>
-      <p class="plat-desc">Native Swift app — AirPlay, offline downloads, Picture-in-Picture, FairPlay DRM.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> App Store certified</span>
+  <section class="new-sec sec-light">
+    <div style="max-width: 640px">
+      <div class="eyebrow">FAQ</div>
+      <div class="h2">Common Questions, Honest Answers</div>
     </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#e8fdf0"><i class="ti ti-device-mobile" style="font-size:20px;color:#1a7f3c" aria-hidden="true"></i></div><div><div class="plat-name">Android</div><div class="plat-os">Smartphones &amp; tablets</div></div></div>
-      <p class="plat-desc">Native Kotlin app — Chromecast, all screen sizes, Widevine DRM, Google Play certified.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Google Play certified</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#f5f5f5"><i class="ti ti-device-tv" style="font-size:20px;color:#1c1c1e" aria-hidden="true"></i></div><div><div class="plat-name">Apple TV</div><div class="plat-os">tvOS</div></div></div>
-      <p class="plat-desc">Native tvOS app — Siri integration, Top Shelf API, cinematic lean-back experience.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Apple TV App Store</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#eef0ff"><i class="ti ti-device-tv" style="font-size:20px;color:#1428a0" aria-hidden="true"></i></div><div><div class="plat-name">Samsung Smart TV</div><div class="plat-os">Tizen OS</div></div></div>
-      <p class="plat-desc">Native Tizen app — optimised for Samsung remote, Samsung TV App Store certified.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Samsung TV certified</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#fff0f0"><i class="ti ti-device-tv" style="font-size:20px;color:#a50034" aria-hidden="true"></i></div><div><div class="plat-name">LG Smart TV</div><div class="plat-os">webOS</div></div></div>
-      <p class="plat-desc">Native webOS app — Magic Remote &amp; voice control, LG Content Store certified.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> LG Content Store</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#f3eeff"><i class="ti ti-device-tv" style="font-size:20px;color:#6c1da3" aria-hidden="true"></i></div><div><div class="plat-name">Roku</div><div class="plat-os">Brightscript / SceneGraph</div></div></div>
-      <p class="plat-desc">Native Roku channel — #1 US streaming platform, Roku Channel Store certified.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Roku Channel Store</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#fff8e8"><i class="ti ti-brand-amazon" style="font-size:20px;color:#e47911" aria-hidden="true"></i></div><div><div class="plat-name">Amazon Fire TV</div><div class="plat-os">Fire OS</div></div></div>
-      <p class="plat-desc">Native Fire TV app — Alexa voice control, Amazon Appstore certified.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Amazon Appstore</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#e8f4ff"><i class="ti ti-device-tv" style="font-size:20px;color:#00448c" aria-hidden="true"></i></div><div><div class="plat-name">Android TV</div><div class="plat-os">Google TV</div></div></div>
-      <p class="plat-desc">Native Android TV app — Google Assistant, D-pad navigation, Play for TV certified.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Play for TV certified</span>
-    </div>
-    <div class="plat-card">
-      <div class="plat-card-head"><div class="plat-icon" style="background:#e8f0ff"><i class="ti ti-world" style="font-size:20px;color:#1a73e8" aria-hidden="true"></i></div><div><div class="plat-name">Web browser</div><div class="plat-os">All browsers</div></div></div>
-      <p class="plat-desc">Responsive web app — HLS/DASH, HTML5 player, PWA support, all modern browsers.</p>
-      <span class="plat-cert"><i class="ti ti-check" style="font-size:10px" aria-hidden="true"></i> Cross-browser ready</span>
-    </div>
-  </div>
-</section>
-
-<section class="new-sec" style="background:#111520">
-  <div style="text-align:center;max-width:600px;margin:0 auto">
-    <div class="eyebrow">WHY CHOOSE US</div>
-    <div class="h2" style="color: white;">The Streaming Specialists Behind Your Launch</div>
-  </div>
-  <div class="why-grid">
-    <div class="why-card"><div class="why-icon"><i class="ti ti-devices" aria-hidden="true"></i></div><h3>Native on every platform</h3><p>True native apps — never web wrappers — so each one feels exactly right on every device and OS version.</p></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-rocket" aria-hidden="true"></i></div><h3>Launch in 6–10 weeks</h3><p>Our proven OTT framework gets you to market fast without cutting corners on quality or security.</p></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-shield-lock" aria-hidden="true"></i></div><h3>Studio-grade security</h3><p>Multi-DRM, forensic watermarking, and geo-blocking protect your content the way the major studios protect theirs.</p></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-file-certificate" aria-hidden="true"></i></div><h3>Full app store management</h3><p>We handle every submission, certification, and approval across every platform — from Apple to Roku — so you don't have to.</p></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-headset" aria-hidden="true"></i></div><h3>24/7 post-launch support</h3><p>We stay with you as you grow, monitoring, updating, and optimizing your platform long after launch day.</p></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-key" aria-hidden="true"></i></div><h3>You own everything</h3><p>Your code, your subscribers, your data. No SaaS lock-in, no monthly platform fees, no strings attached.</p></div>
-  </div>
-</section>
-
-<div class="stats-sec new-sec">
-  <div class="stats-inner">
-    <div class="stats-grid">
-      <div><div class="stat-num">50+</div><div class="stat-lbl">OTT platforms launched</div></div>
-      <div><div class="stat-num">50k+</div><div class="stat-lbl">End users served</div></div>
-      <div><div class="stat-num">10+</div><div class="stat-lbl">Device platforms</div></div>
-      <div><div class="stat-num">99.9%</div><div class="stat-lbl">Average uptime</div></div>
-    </div>
-    <div></div>
-    <div class="stats-quote">"Powering the next generation of streaming businesses — from creators launching their first app to broadcasters serving millions."</div>
-  </div>
-</div>
-
-<section class="sec sec-white new-sec">
-  <div style="text-align:center;max-width:600px;margin:0 auto">
-    <div class="eyebrow">TESTIMONIALS</div>
-    <div class="h2">Success Stories From Our Streaming Partners</div>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
-      <p class="testi-quote">“We launched on iOS, Android, Roku, and Apple TV in under eight weeks. Our digital subscriptions are now our fastest-growing source of revenue.”</p>
-      <div class="testi-person">
-        <div class="testi-avatar" style="background:#E6F1FB;color:#0C447C">HD</div>
-        <div><div class="testi-name">Head of Digital</div><div class="testi-role">Regional Broadcasting Network</div></div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does it take to launch my OTT platform?<i
+            class="ti ti-chevron-down"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="faq-a">
+          A standard platform covering mobile, web, and two to three TV
+          platforms usually launches in 6–10 weeks. Larger enterprise builds
+          with Samsung, LG, and custom features take 10–16 weeks. You'll get an
+          exact, milestone-based timeline during your free discovery session —
+          before any work begins.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Which platforms and devices do you build for?<i
+            class="ti ti-chevron-down"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="faq-a">
+          All the major ones: iOS, Android, Apple TV, Android TV, Samsung Smart
+          TV, LG Smart TV, Amazon Fire TV, Roku, and responsive web — plus
+          Chromecast and AirPlay. We handle native development, certification,
+          and app store submission for each.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I own the platform after it is built?<i
+            class="ti ti-chevron-down"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="faq-a">
+          Completely. You own the code, the design, the subscriber data, and the
+          app store accounts. We're your development partner, not a SaaS
+          provider — no lock-in and no monthly platform fees.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do you protect my content from piracy?<i
+            class="ti ti-chevron-down"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="faq-a">
+          Every platform includes Widevine (Android/Chrome), FairPlay (Apple),
+          and PlayReady (Windows) multi-DRM, AES-128 content encryption, secure
+          token authentication, and geo-blocking. Advanced plans add forensic
+          watermarking — invisible viewer-specific identifiers that trace leaked
+          content to its source.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is there a free consultation available?<i
+            class="ti ti-chevron-down"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="faq-a">
+          Always — free and with zero obligation. Book a strategy session with
+          our OTT specialists and receive a custom proposal, including a device
+          roadmap, timeline, and transparent cost estimate, within 48 hours.
+        </div>
       </div>
     </div>
-    <div class="testi-card">
-      <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
-      <p class="testi-quote">“On match night the platform handled 200,000 viewers at once without a single complaint. That kind of reliability changes everything for us."</p>
-      <div class="testi-person">
-        <div class="testi-avatar" style="background:#EAF3DE;color:#27500A">CO</div>
-        <div><div class="testi-name">Chief Operating Officer</div><div class="testi-role">Sports Streaming Network</div></div>
+  </section>
+
+  <section class="new-sec sec-white" style="display: none">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 16px;
+      "
+    >
+      <div>
+        <div class="eyebrow">OTT insights &amp; resources</div>
+        <div class="h2">
+          Streaming industry strategies &amp; platform guides
+        </div>
+      </div>
+      <a href="#" class="read-more" style="font-size: 13px"
+        >View all articles <i class="ti ti-arrow-right" aria-hidden="true"></i
+      ></a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-thumb" style="background: #0b0e1a">
+          <i
+            class="ti ti-device-tv"
+            style="font-size: 48px; color: #f55a00"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">
+            <i class="ti ti-tag" aria-hidden="true"></i> OTT Development
+          </div>
+          <div class="blog-title">
+            How to launch your own OTT platform without building from scratch
+          </div>
+          <div class="blog-excerpt">
+            A practical guide to white-label OTT development — what it covers,
+            what it costs, and how to get to market in weeks rather than years.
+          </div>
+          <div class="blog-meta">
+            <span>June 2026</span
+            ><a href="#" class="read-more"
+              >Read more <i class="ti ti-arrow-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb" style="background: #111520">
+          <i
+            class="ti ti-currency-dollar"
+            style="font-size: 48px; color: #f55a00"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">
+            <i class="ti ti-tag" aria-hidden="true"></i> Monetization
+          </div>
+          <div class="blog-title">
+            SVOD vs AVOD vs TVOD: choosing the right monetization model for your
+            streaming business
+          </div>
+          <div class="blog-excerpt">
+            A clear breakdown of every OTT revenue model — with real examples of
+            which works best for which type of content and audience.
+          </div>
+          <div class="blog-meta">
+            <span>May 2026</span
+            ><a href="#" class="read-more"
+              >Read more <i class="ti ti-arrow-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="testi-card">
-      <div class="testi-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div>
-      <p class="testi-quote">“I have my own branded app on Roku, Apple TV, iOS, and Android. My subscribers are mine and my revenue is mine — the best decision I ever made."</p>
-      <div class="testi-person">
-        <div class="testi-avatar" style="background:#FAEEDA;color:#633806">IC</div>
-        <div><div class="testi-name">Independent Creator</div><div class="testi-role">Documentary Filmmaker</div></div>
-      </div>
+  </section>
+
+  <div class="cta-strip new-sec" style="display: none">
+    <h2>Ready to launch your streaming platform?</h2>
+    <p>
+      Get a free custom platform proposal — device roadmap, timeline, and cost
+      estimate — delivered within 48 hours. No obligation.
+    </p>
+    <div class="cta-form">
+      <input
+        class="cta-input"
+        type="email"
+        placeholder="Enter your work email"
+      />
+      <button class="cta-submit">Book free demo →</button>
     </div>
   </div>
+
+  <script>
+    function toggleFaq(el) {
+      el.parentElement.classList.toggle("open");
+    }
+  </script>
 </section>
-
-<section class="new-sec sec-light">
-  <div style="max-width:640px">
-    <div class="eyebrow">FAQ</div>
-    <div class="h2">Common Questions, Honest Answers</div>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item open">
-      <div class="faq-q" onclick="toggleFaq(this)">How long does it take to launch my OTT platform?<i class="ti ti-chevron-down" aria-hidden="true"></i></div>
-      <div class="faq-a">A standard platform covering mobile, web, and two to three TV platforms usually launches in 6–10 weeks. Larger enterprise builds with Samsung, LG, and custom features take 10–16 weeks. You'll get an exact, milestone-based timeline during your free discovery session — before any work begins.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Which platforms and devices do you build for?<i class="ti ti-chevron-down" aria-hidden="true"></i></div>
-      <div class="faq-a">All the major ones: iOS, Android, Apple TV, Android TV, Samsung Smart TV, LG Smart TV, Amazon Fire TV, Roku, and responsive web — plus Chromecast and AirPlay. We handle native development, certification, and app store submission for each.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Do I own the platform after it is built?<i class="ti ti-chevron-down" aria-hidden="true"></i></div>
-      <div class="faq-a">Completely. You own the code, the design, the subscriber data, and the app store accounts. We're your development partner, not a SaaS provider — no lock-in and no monthly platform fees.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">How do you protect my content from piracy?<i class="ti ti-chevron-down" aria-hidden="true"></i></div>
-      <div class="faq-a">Every platform includes Widevine (Android/Chrome), FairPlay (Apple), and PlayReady (Windows) multi-DRM, AES-128 content encryption, secure token authentication, and geo-blocking. Advanced plans add forensic watermarking — invisible viewer-specific identifiers that trace leaked content to its source.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Is there a free consultation available?<i class="ti ti-chevron-down" aria-hidden="true"></i></div>
-      <div class="faq-a">Always — free and with zero obligation. Book a strategy session with our OTT specialists and receive a custom proposal, including a device roadmap, timeline, and transparent cost estimate, within 48 hours.</div>
-    </div>
-  </div>
-</section>
-
-<section class="new-sec sec-white" style="display: none;">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
-    <div>
-      <div class="eyebrow">OTT insights &amp; resources</div>
-      <div class="h2">Streaming industry strategies &amp; platform guides</div>
-    </div>
-    <a href="#" class="read-more" style="font-size:13px">View all articles <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-  </div>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <div class="blog-thumb" style="background:#0b0e1a"><i class="ti ti-device-tv" style="font-size:48px;color:#f55a00" aria-hidden="true"></i></div>
-      <div class="blog-body">
-        <div class="blog-cat"><i class="ti ti-tag" aria-hidden="true"></i> OTT Development</div>
-        <div class="blog-title">How to launch your own OTT platform without building from scratch</div>
-        <div class="blog-excerpt">A practical guide to white-label OTT development — what it covers, what it costs, and how to get to market in weeks rather than years.</div>
-        <div class="blog-meta"><span>June 2026</span><a href="#" class="read-more">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
-      </div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-thumb" style="background:#111520"><i class="ti ti-currency-dollar" style="font-size:48px;color:#f55a00" aria-hidden="true"></i></div>
-      <div class="blog-body">
-        <div class="blog-cat"><i class="ti ti-tag" aria-hidden="true"></i> Monetization</div>
-        <div class="blog-title">SVOD vs AVOD vs TVOD: choosing the right monetization model for your streaming business</div>
-        <div class="blog-excerpt">A clear breakdown of every OTT revenue model — with real examples of which works best for which type of content and audience.</div>
-        <div class="blog-meta"><span>May 2026</span><a href="#" class="read-more">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="cta-strip new-sec">
-  <h2>Ready to launch your streaming platform?</h2>
-  <p>Get a free custom platform proposal — device roadmap, timeline, and cost estimate — delivered within 48 hours. No obligation.</p>
-  <div class="cta-form">
-    <input class="cta-input" type="email" placeholder="Enter your work email">
-    <button class="cta-submit">Book free demo →</button>
-  </div>
-</div>
-
-<script>
-function toggleFaq(el){
-  el.parentElement.classList.toggle('open');
-}
-</script>
