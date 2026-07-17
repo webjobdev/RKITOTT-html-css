@@ -130,18 +130,51 @@
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.65);
   }
+  /* ==================================================
+   HOVER & ANIMATION EFFECTS - CSS ONLY
+================================================== */
+
+.svc-card{
+  animation:card-fade-in 0.7s ease both;
+}
+.svc-grid .svc-card:nth-child(1){animation-delay:0s}
+.svc-grid .svc-card:nth-child(2){animation-delay:0.12s}
+.svc-grid .svc-card:nth-child(3){animation-delay:0.24s}
+
+.svc-icon{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),background 0.35s ease;
+}
+.svc-card:hover .svc-icon{
+  transform:scale(1.12) rotate(-6deg);
+  background:rgba(255,107,0,0.22);
+}
+.svc-card:hover .svc-icon i{
+  animation:icon-wiggle 0.5s ease;
+}
+
+.svc-card:hover h3{
+  color:#ff6b00;
+  transition:color 0.3s ease;
+}
+
+.svc-card > p{
+  transition:color 0.3s ease;
+}
+.svc-card:hover > p{
+  color:rgba(255,255,255,0.7);
+}
+
+/* keyframes */
+@keyframes card-fade-in{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes icon-wiggle{
+  0%,100%{transform:scale(1.12) rotate(-6deg)}
+  50%{transform:scale(1.12) rotate(6deg)}
+}
 </style>
 <section class="about-breadcrumb">
-  <div class="breadcrumb-container">
-    <h1>Contact Us</h1>
-    <nav aria-label="breadcrumb">
-      <a href="/">Home</a>
-      <span class="breadcrumb-separator">
-        <i class="ti ti-chevron-right"></i>
-      </span>
-      <span>Contact Us</span>
-    </nav>
-  </div>
 </section>
 
 <section class="service-new-sec showcase-sec">

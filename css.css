@@ -278,7 +278,7 @@ padding-bottom: 15px !important;
   font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.65);
-  max-width: 560px;
+  /* max-width: 560px; */
 }
 .sec-light .body-copy,
 .sec-white .body-copy {
@@ -1177,9 +1177,32 @@ padding-bottom: 15px !important;
    menu color desktop
 ========================================= */
 .has-header-2 .sr-header-1-wrap {
- background: linear-gradient(135deg, #232526, #414345) !important;
+    background: linear-gradient(
+        180deg,
+        rgba(24, 28, 40, 0.98) 0%,
+        rgba(11, 14, 26, 0.96) 100%
+    ) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 999;
 }
 
+.has-header-2 .sr-header-1-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.04),
+        transparent
+    );
+    pointer-events: none;
+}
 /* ==========================================
    menu color phone
 ========================================= */
@@ -1263,9 +1286,8 @@ padding-bottom: 15px !important;
 /* breadcrumb */
 .about-breadcrumb {
     background: #0b0e1a;
-    padding: 120px 10px 60px;
+    padding: 50px;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .breadcrumb-container h1 {
@@ -1309,7 +1331,7 @@ padding-bottom: 15px !important;
 
 @media (max-width: 992px) {
     .about-breadcrumb {
-        padding:140px 10px 35px;
+        padding:50px;
     }
 
     .breadcrumb-container h1 {
@@ -1321,3 +1343,245 @@ padding-bottom: 15px !important;
     }
 }
 /* breadcrumb */
+/* ==================================================
+   HOVER & ANIMATION EFFECTS - CSS ONLY
+================================================== */
+
+/* --- apart-card --- */
+.apart-card{
+  transition:transform 0.35s ease,border-color 0.35s ease,background 0.35s ease,box-shadow 0.35s ease;
+  animation:card-fade-in 0.7s ease both;
+}
+.apart-grid .apart-card:nth-child(1){animation-delay:0s}
+.apart-grid .apart-card:nth-child(2){animation-delay:0.1s}
+.apart-grid .apart-card:nth-child(3){animation-delay:0.2s}
+.apart-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(245,90,0,0.4);
+  background:rgba(255,255,255,0.07);
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+.apart-icon{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),background 0.35s ease;
+}
+.apart-card:hover .apart-icon{
+  transform:scale(1.12) rotate(-5deg);
+  background:rgba(245,90,0,0.22);
+}
+.apart-card:hover h3{
+  transition:color 0.3s ease;
+}
+
+/* --- ott-floater (3D showcase chips) --- */
+.ott-floater{
+  transition:transform 0.3s ease,box-shadow 0.3s ease,background 0.3s ease;
+}
+.ott-floater:hover{
+  transform:scale(1.08) translateZ(20px);
+  background:rgba(255,255,255,0.1);
+  box-shadow:0 24px 50px rgba(245,90,0,0.3);
+}
+.ott-floater i{
+  transition:transform 0.3s ease;
+}
+.ott-floater:hover i{
+  transform:scale(1.15) rotate(-6deg);
+}
+.ott-play-btn{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),box-shadow 0.3s ease;
+}
+.ott-tv:hover .ott-play-btn{
+  transform:scale(1.12);
+  box-shadow:0 0 0 10px rgba(255,107,0,0.18),0 16px 36px rgba(255,107,0,0.5);
+}
+
+/* --- plat-card --- */
+.plat-card{
+  transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease;
+  animation:card-fade-in 0.6s ease both;
+}
+.plat-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 36px rgba(0,0,0,0.12);
+  border-color:#f55a00;
+}
+.plat-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+.plat-card:hover .plat-icon{
+  transform:scale(1.1) rotate(4deg);
+}
+.plat-cert{
+  transition:transform 0.25s ease,background 0.25s ease;
+}
+.plat-card:hover .plat-cert{
+  transform:scale(1.04);
+}
+
+/* --- why-card --- */
+.why-card{
+  transition:transform 0.3s ease,border-color 0.3s ease,background 0.3s ease;
+  animation:card-fade-in 0.6s ease both;
+}
+.why-grid .why-card:nth-child(1){animation-delay:0s}
+.why-grid .why-card:nth-child(2){animation-delay:0.08s}
+.why-grid .why-card:nth-child(3){animation-delay:0.16s}
+.why-grid .why-card:nth-child(4){animation-delay:0.24s}
+.why-grid .why-card:nth-child(5){animation-delay:0.32s}
+.why-grid .why-card:nth-child(6){animation-delay:0.4s}
+.why-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(245,90,0,0.4);
+  background:rgba(255,255,255,0.07);
+}
+.why-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),background 0.3s ease;
+}
+.why-card:hover .why-icon{
+  transform:scale(1.12) rotate(-4deg);
+  background:rgba(245,90,0,0.22);
+}
+.why-card:hover h3{
+  transition:color 0.3s ease;
+}
+
+/* --- feat-item (split feature list) --- */
+.feat-item{
+  transition:transform 0.3s ease;
+}
+.feat-item:hover{
+  transform:translateX(6px);
+}
+.feat-item-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),background 0.3s ease;
+}
+.feat-item:hover .feat-item-icon{
+  transform:scale(1.12) rotate(-5deg);
+  background:rgba(245,90,0,0.22);
+}
+
+/* --- mock-stat (dashboard mockup) --- */
+.mock-stat{
+  transition:transform 0.3s ease,background 0.3s ease;
+}
+.mock-stat:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,0.08);
+}
+.mock-stat .n{
+  transition:transform 0.3s ease;
+}
+.mock-stat:hover .n{
+  transform:scale(1.08);
+}
+.bar-item{
+  transition:transform 0.3s ease,background 0.3s ease;
+}
+.mock-chart:hover .bar-item{
+  filter:brightness(1.2);
+}
+
+/* --- stats-sec numbers --- */
+.stats-grid > div{
+  transition:transform 0.3s ease;
+}
+.stats-grid > div:hover{
+  transform:translateY(-4px);
+}
+.stat-num{
+  transition:transform 0.3s ease;
+}
+.stats-grid > div:hover .stat-num{
+  transform:scale(1.08);
+}
+
+/* --- testi-card --- */
+.testi-card{
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+  animation:card-fade-in 0.6s ease both;
+}
+.testi-grid .testi-card:nth-child(1){animation-delay:0s}
+.testi-grid .testi-card:nth-child(2){animation-delay:0.1s}
+.testi-grid .testi-card:nth-child(3){animation-delay:0.2s}
+.testi-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 34px rgba(0,0,0,0.12);
+}
+.testi-avatar{
+  transition:transform 0.3s ease;
+}
+.testi-card:hover .testi-avatar{
+  transform:scale(1.1);
+}
+.testi-stars i{
+  transition:transform 0.2s ease;
+}
+.testi-card:hover .testi-stars i{
+  animation:star-twinkle 0.6s ease;
+}
+.testi-stars i:nth-child(1){animation-delay:0s}
+.testi-stars i:nth-child(2){animation-delay:0.05s}
+.testi-stars i:nth-child(3){animation-delay:0.1s}
+.testi-stars i:nth-child(4){animation-delay:0.15s}
+.testi-stars i:nth-child(5){animation-delay:0.2s}
+@keyframes star-twinkle{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+}
+
+/* --- faq-item --- */
+.faq-item{
+  transition:transform 0.25s ease,box-shadow 0.25s ease;
+}
+.faq-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 26px rgba(0,0,0,0.08);
+}
+.faq-q i{
+  transition:transform 0.3s ease,color 0.3s ease;
+}
+.faq-q:hover i{
+  color:#f55a00;
+}
+
+/* --- blog-card --- */
+.blog-card{
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+.blog-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 36px rgba(0,0,0,0.12);
+}
+.blog-thumb i{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1);
+}
+.blog-card:hover .blog-thumb i{
+  transform:scale(1.15) rotate(-4deg);
+}
+.read-more{
+  transition:gap 0.25s ease;
+}
+.read-more:hover{
+  gap:8px !important;
+}
+
+/* --- cta-submit / cta-input --- */
+.cta-submit{
+  transition:transform 0.25s ease,background 0.25s ease;
+}
+.cta-submit:hover{
+  transform:translateY(-2px);
+  background:#1a1e2e;
+}
+.cta-input{
+  transition:box-shadow 0.25s ease;
+}
+.cta-input:focus{
+  box-shadow:0 0 0 3px rgba(245,90,0,0.25);
+}
+
+/* --- shared entrance keyframe --- */
+@keyframes card-fade-in{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}

@@ -785,7 +785,7 @@
 .eyebrow { font-size: 18px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #f55a00; margin-bottom: 12px; }
 .sec-light .eyebrow, .sec-white .eyebrow { color: #f55a00; }
 .sec-light .h2, .sec-white .h2 { color: #0b0e1a; }
-.body-copy { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.65); max-width: 560px; }
+.body-copy { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.65);}
 .sec-light .body-copy, .sec-white .body-copy { color: #555 !important; }
 
 .service-sec { padding: 130px 0px; }
@@ -872,7 +872,7 @@
 @media (max-width:991px){ .hero-inner{grid-template-columns:1fr;} .hero-copy h1{font-size:32px;} }
 
 /* cta banner (red, image style) */
-.cta-banner { background: linear-gradient(120deg,#7a0d0d,#c81414); border-radius:18px; margin:0 40px 40px; padding:36px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.cta-banner { background: #f55a00 !important;; border-radius:18px; margin:0 40px 40px; padding:36px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
 .cta-banner h3 { font-size:24px; margin-bottom:0; max-width:520px; }
 .cta-banner .visual { width:140px;height:70px;border-radius:10px; background:rgba(0,0,0,0.35); display:flex;align-items:center;justify-content:center; }
 .cta-banner .visual i { font-size:26px; color:#fff; }
@@ -909,15 +909,15 @@
 @media (max-width:767px){ .process-grid{grid-template-columns:1fr; gap:32px;} .process-grid::before{display:none;} }
 
 /* industries */
-.ind-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; max-width:900px; }
+.ind-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px;}
 .ind-item { display:flex; gap:14px;align-items: baseline;}
 .ind-icon { width:50px;height:50px;border-radius:10px;background:rgba(245,90,0,0.1); display:flex;align-items:center;justify-content:center; flex-shrink:0; }
 .ind-icon i { color:#f55a00; font-size:18px; }
 .ind-item h4 { font-size:25px; color:#0b0e1a !important; margin-bottom:4px; }
-.ind-item p { font-size:20px; color:#555 !important; line-height:1.5; margin:0; max-width:380px; }
+.ind-item p { font-size:20px; color:#555 !important; line-height:1.5; margin:0; }
 @media (max-width:767px){ .ind-grid{grid-template-columns:1fr;} }
 
-.section-head { text-align:center; max-width:640px; margin:0 auto 10px; }
+.section-head { text-align:center; margin:0 auto 10px; }
 .center { text-align:center; }
 .mx-auto { margin-left:auto; margin-right:auto; }
 
@@ -928,19 +928,211 @@
   text-align: center;
   margin: 0 auto 48px;
 }
-.service-body-copy { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.65);}
+
+@media (min-width: 2000px) {
+.svc-grid-12{
+ grid-template-columns: repeat(4, 1fr);
+}
+}
+/* ==================================================
+   HOVER & ANIMATION EFFECTS - CSS ONLY
+================================================== */
+
+/* --- svc-card (core services + platform features) --- */
+.svc-card{
+  transition:transform 0.35s ease,border-color 0.35s ease,background 0.35s ease,box-shadow 0.35s ease;
+  animation:card-fade-in 0.7s ease both;
+}
+.svc-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(255,107,0,0.15);
+}
+.svc-icon{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),background 0.35s ease;
+}
+.svc-card:hover .svc-icon{
+  transform:scale(1.1) rotate(-5deg);
+  background:rgba(255,107,0,0.22);
+}
+.svc-card:hover .svc-icon i{
+  animation:icon-wiggle 0.5s ease;
+}
+.svc-ul li{
+  transition:transform 0.25s ease,color 0.25s ease;
+}
+.svc-ul li:hover{
+  transform:translateX(4px);
+  color:rgba(255,255,255,0.75);
+}
+
+/* --- plat-card --- */
+.plat-card{
+  transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease;
+}
+.plat-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 34px rgba(0,0,0,0.1);
+  border-color:#f55a00;
+}
+.plat-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+.plat-card:hover .plat-icon{
+  transform:scale(1.1) rotate(4deg);
+}
+
+/* --- why-card --- */
+.why-card{
+  transition:transform 0.3s ease,border-color 0.3s ease,background 0.3s ease;
+}
+.why-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(245,90,0,0.4);
+}
+.why-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),background 0.3s ease;
+}
+.why-card:hover .why-icon{
+  transform:scale(1.12) rotate(-4deg);
+  background:rgba(245,90,0,0.22);
+}
+.why-card:hover h3{
+  color:#f55a00;
+  transition:color 0.3s ease;
+}
+
+/* --- mon-card (monetization) --- */
+.mon-card{
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+.mon-card:hover{
+  transform:translateY(-6px) scale(1.015);
+  box-shadow:0 18px 36px rgba(0,0,0,0.12);
+}
+.mon-icon{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1);
+}
+.mon-card:hover .mon-icon{
+  transform:scale(1.15) rotate(6deg);
+}
+
+/* --- testi-card --- */
+.testi-card{
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+.testi-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 34px rgba(0,0,0,0.1);
+}
+.testi-avatar{
+  transition:transform 0.3s ease;
+}
+.testi-card:hover .testi-avatar{
+  transform:scale(1.1);
+}
+
+/* --- process-step (timeline) --- */
+.process-step{
+  transition:transform 0.3s ease;
+}
+.process-num{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),box-shadow 0.35s ease,background 0.35s ease;
+  position:relative;
+}
+.process-num::after{
+  content:'';
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  border:2px solid #f55a00;
+  opacity:0;
+  transform:scale(0.85);
+  transition:opacity 0.35s ease,transform 0.35s ease;
+}
+.process-step:hover{
+  transform:translateY(-4px);
+}
+.process-step:hover .process-num{
+  transform:scale(1.12) rotate(-6deg);
+  box-shadow:0 10px 24px rgba(245,90,0,0.4);
+}
+.process-step:hover .process-num::after{
+  opacity:0.5;
+  transform:scale(1);
+}
+.process-step:hover h4{
+  color:#f55a00;
+  transition:color 0.3s ease;
+}
+
+/* --- ind-item (industries) --- */
+.ind-item{
+  transition:transform 0.3s ease;
+}
+.ind-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),background 0.3s ease;
+}
+.ind-item:hover{
+  transform:translateX(6px);
+}
+.ind-item:hover .ind-icon{
+  transform:scale(1.12) rotate(-5deg);
+  background:rgba(245,90,0,0.2);
+}
+.ind-item:hover h4{
+  color:#f55a00;
+  transition:color 0.3s ease;
+}
+
+/* --- faq-item --- */
+.faq-item{
+  transition:transform 0.25s ease,box-shadow 0.25s ease;
+}
+.faq-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 26px rgba(0,0,0,0.08);
+}
+.faq-q i{
+  transition:transform 0.3s ease,color 0.3s ease;
+}
+.faq-q:hover i{
+  color:#f55a00;
+}
+
+/* --- tech-logo --- */
+.tech-logo{
+  transition:transform 0.3s ease,color 0.3s ease;
+}
+.tech-logo:hover{
+  transform:translateY(-4px);
+}
+.tech-logo:hover i{
+  transform:scale(1.15);
+}
+.tech-logo i{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* --- shared entrance animation + icon wiggle keyframes --- */
+@keyframes card-fade-in{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes icon-wiggle{
+  0%,100%{transform:scale(1.1) rotate(-5deg)}
+  50%{transform:scale(1.1) rotate(5deg)}
+}
+
+/* stagger entrance for grids */
+.svc-grid .svc-card:nth-child(1){animation-delay:0s}
+.svc-grid .svc-card:nth-child(2){animation-delay:0.08s}
+.svc-grid .svc-card:nth-child(3){animation-delay:0.16s}
+.svc-grid .svc-card:nth-child(4){animation-delay:0.24s}
+.svc-grid .svc-card:nth-child(5){animation-delay:0.32s}
+.svc-grid .svc-card:nth-child(6){animation-delay:0.4s}
 </style>
 <section class="about-breadcrumb">
-    <div class="breadcrumb-container">
-        <h1>Services</h1>
-        <nav aria-label="breadcrumb">
-            <a href="/">Home</a>
-            <span class="breadcrumb-separator">
-                <i class="ti ti-chevron-right"></i>
-            </span>
-            <span>Services</span>
-        </nav>
-    </div>
+  
 </section>
 
 <section class="service-new-sec showcase-sec">
@@ -954,7 +1146,7 @@
 
 <div class="pg">
   <!-- Hero -->
-  <section class="hero-sec">
+  <!-- <section class="hero-sec">
     <div class="hero-inner">
       <div class="hero-visual"><i class="fa-solid fa-clapperboard"></i></div>
       <div class="hero-copy">
@@ -967,16 +1159,60 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <!-- CTA banner 1 -->
-  <div class="cta-banner">
-    <h3>Get the Best OTT App Development &amp; Hit Your Download Count</h3>
-    <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-      <button class="btn-primary" onclick="window.location.href='/contact-us/'"><i class="fa-solid fa-phone"></i> Contact Now!</button>
-      <div class="visual"><i class="fa-solid fa-photo-film"></i></div>
+  <!-- Hero -->
+<section class="hero-sec">
+  <div class="hero-inner">
+    <div class="hero-visual" style="padding:20px;">
+      <div class="device-frame" style="width:100%;max-width:420px;background:linear-gradient(160deg,#171b28,#0d1018);border:0.5px solid rgba(255,255,255,0.12);border-radius:18px;padding:14px;box-shadow:0 30px 70px rgba(0,0,0,0.55);">
+        <div style="display:flex;align-items:center;gap:6px;padding:2px 6px 12px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.18);"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.18);"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.18);"></div>
+        </div>
+        <div style="background:#05070d;border-radius:10px;overflow:hidden;padding:16px;">
+          <div style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:14px;">
+            <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#f55a00;font-weight:600;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#f55a00;"></span>LIVE
+            </div>
+          </div>
+          <div style="position:relative;height:150px;border-radius:10px;background:linear-gradient(135deg,#2a1a10,#1a1420 60%,#0d1018);margin-bottom:14px;display:flex;align-items:flex-end;padding:14px;overflow:hidden;">
+            <div style="width:34px;height:34px;border-radius:50%;background:#f55a00;display:flex;align-items:center;justify-content:center;margin-right:10px;flex-shrink:0;">
+              <i class="fa-solid fa-play" style="font-size:14px;color:#fff;"></i>
+            </div>
+            <div>
+              <strong style="display:block;font-size:14px;color:#fff;">Featured Content</strong>
+              <small style="font-size:11px;color:rgba(255,255,255,0.55);">Now streaming</small>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+            <div style="aspect-ratio:16/10;border-radius:6px;background:linear-gradient(150deg,#1c2130,#0d1018);"></div>
+            <div style="aspect-ratio:16/10;border-radius:6px;background:linear-gradient(150deg,#241813,#0d1018);"></div>
+            <div style="aspect-ratio:16/10;border-radius:6px;background:linear-gradient(150deg,#161c28,#0d1018);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">OTT App Development</div>
+      <h1>Get Top <span>OTT App</span> Development Solutions</h1>
+      <p class="body-copy">From eliminating friction to streaming multi-genre content with our OTT app solutions. Our experienced OTT app developers are bringing in loopless, instant, and seamless content streaming for your users.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="window.location.href='/contact-us/'" ><i class="fa-solid fa-phone"></i> Contact Now!</button>
+        <button class="btn-ghost" onclick="window.location.href='/about-us/'">Learn More</button>
+      </div>
     </div>
   </div>
+</section>
+
+  <!-- CTA banner 1 -->
+<div class="cta-banner">
+  <h3>Get the Best OTT App Development &amp; Hit Your Download Count</h3>
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <button class="btn-ghost" onclick="window.location.href='/contact-us/'"><i class="fa-solid fa-phone"></i> Contact Now!</button>
+  </div>
+</div>
 </div>
 
 <div class="ott-hero">
@@ -1183,7 +1419,7 @@
   </div>
 </section>
 
-<div class="ott-3d-wrap">
+<!-- <div class="ott-3d-wrap">
   <div class="ott-3d-stage">
     <div class="ott-glow"></div>
     <div class="ott-tv">
@@ -1209,14 +1445,14 @@
       <i class="ti ti-antenna" aria-hidden="true"></i><span>Live stream</span>
     </div>
   </div>
-</div>
+</div> -->
 
 <section class="svc-section">
   <div class="svc-header">
     <div class="svc-eyebrow">Powerful OTT Platform Features</div>
     <div class="svc-title">Build Modern OTT Streaming Platform</span></div>
   </div>
-  <div class="svc-grid">
+  <div class="svc-grid svc-grid-12">
     <div class="svc-card">
       <div class="svc-icon">
         <i class="ti ti-users-group"></i>
@@ -1350,93 +1586,6 @@
       </p>
     </div>
 
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-category"></i>
-      </div>
-      <h3>Content Categories</h3>
-      <p>
-        Organize movies, TV shows, live channels, and events with customizable
-        categories and content collections.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-lock-access"></i>
-      </div>
-      <h3>Role & Permission Management</h3>
-      <p>
-        Create admin users, staff accounts, API users, and custom permission
-        rules for secure platform management.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-api"></i>
-      </div>
-      <h3>Developer API Access</h3>
-      <p>
-        Integrate external applications using secure REST APIs, API users,
-        authentication, and automation tools.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-chart-bar"></i>
-      </div>
-      <h3>Reports & Analytics</h3>
-      <p>
-        Track subscriber growth, revenue, activations, payments, and platform
-        performance with detailed reports.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-refresh"></i>
-      </div>
-      <h3>Catch-Up TV & Live Rewind</h3>
-      <p>
-        Enable viewers to replay missed programs, rewind live streams, and enjoy
-        a flexible television experience.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-mail"></i>
-      </div>
-      <h3>Email & Authentication</h3>
-      <p>
-        Configure email servers, guest access, user registration, account
-        verification, and secure authentication workflows.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-device-desktop-code"></i>
-      </div>
-      <h3>App Branding & Customization</h3>
-      <p>
-        Customize logos, colors, themes, banners, navigation, and user interface
-        to match your brand identity.
-      </p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">
-        <i class="ti ti-cloud-upload"></i>
-      </div>
-      <h3>Streaming Infrastructure</h3>
-      <p>
-        Manage streaming URLs, playback policies, CDN integrations, stream
-        services, and high-performance video delivery.
-      </p>
-    </div>
   </div>
 </section>
 

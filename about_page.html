@@ -87,7 +87,7 @@
 .mission-accent{display:inline-block;margin-top:28px;font-size:30px;font-weight:700;color:var(--orange)}
 
 /* HOW WE WORK */
-.process-header{max-width:600px;margin-bottom:52px}
+.process-header{margin-bottom:52px}
 .process-header h2{font-size:50px;font-weight:800;color:#0b0e1a !important;line-height:1.2;margin-bottom:14px}
 .process-header p{font-size:22px;color:#555 !important;line-height:1.7}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
@@ -145,18 +145,223 @@
   .hero-badge{padding:10px 12px}
   .hero-badge strong{font-size:15px}
 }
+/* STEP HOVER & ANIMATION EFFECTS - CSS ONLY */
+.step{
+  transition:transform 0.35s ease;
+  cursor:pointer;
+}
+.step:hover{
+  transform:translateY(-8px);
+}
+
+.step-num{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),
+             box-shadow 0.35s ease,
+             background 0.35s ease;
+}
+.step:hover .step-num{
+  transform:scale(1.12) rotate(-6deg);
+  box-shadow:0 10px 24px rgba(245,90,0,0.45);
+  background:#ff7226;
+}
+
+.step-title{
+  transition:color 0.3s ease;
+}
+.step:hover .step-title{
+  color:var(--orange);
+}
+
+.step-desc{
+  transition:color 0.3s ease;
+}
+.step:hover .step-desc{
+  color:#333;
+}
+
+.step-num{
+  position:relative;
+}
+.step-num::after{
+  content:'';
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  border:2px solid var(--orange);
+  opacity:0;
+  transform:scale(0.85);
+  transition:opacity 0.35s ease,transform 0.35s ease;
+}
+.step:hover .step-num::after{
+  opacity:0.5;
+  transform:scale(1);
+}
+
+.step{
+  animation:step-fade-in 0.7s ease both;
+}
+.step:nth-child(1){animation-delay:0s}
+.step:nth-child(2){animation-delay:0.15s}
+.step:nth-child(3){animation-delay:0.3s}
+.step:nth-child(4){animation-delay:0.45s}
+
+@keyframes step-fade-in{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.steps::before{
+  transform:scaleX(0);
+  transform-origin:left center;
+  animation:line-draw 1s ease 0.5s forwards;
+}
+@keyframes line-draw{
+  to{transform:scaleX(1)}
+}
+/* ==================================================
+   ADDITIONAL HOVER & ANIMATION EFFECTS - CSS ONLY
+================================================== */
+
+/* --- hero device mockup --- */
+.device-frame{
+  transition:transform 0.4s ease,box-shadow 0.4s ease;
+  animation:hero-fade-in 0.8s ease both;
+}
+.hero-visual:hover .device-frame{
+  transform:translateY(-6px) rotate(-0.5deg);
+  box-shadow:0 40px 90px rgba(0,0,0,0.65);
+}
+.device-play{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),box-shadow 0.3s ease;
+}
+.device-feature:hover .device-play{
+  transform:scale(1.12);
+  box-shadow:0 8px 20px rgba(245,90,0,0.5);
+}
+.device-thumb{
+  transition:transform 0.3s ease,filter 0.3s ease;
+}
+.device-thumb:hover{
+  transform:translateY(-3px);
+  filter:brightness(1.3);
+}
+.device-live-dot{
+  animation:live-pulse 1.4s ease-in-out infinite;
+}
+@keyframes live-pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.4;transform:scale(1.3)}
+}
+
+/* --- hero badges --- */
+.hero-badge{
+  transition:transform 0.35s ease,box-shadow 0.35s ease;
+  animation:badge-float 4s ease-in-out infinite;
+}
+.hero-badge-bottom{animation-delay:1.2s}
+.hero-badge:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 20px 44px rgba(245,90,0,0.3);
+}
+.hero-badge-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+.hero-badge:hover .hero-badge-icon{
+  transform:scale(1.12) rotate(-6deg);
+}
+@keyframes badge-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+/* --- who-pill --- */
+.who-pill{
+  transition:transform 0.3s ease,border-color 0.3s ease,background 0.3s ease;
+  animation:card-fade-in 0.7s ease both;
+}
+.who-pill:nth-child(1){animation-delay:0s}
+.who-pill:nth-child(2){animation-delay:0.1s}
+.who-pill:nth-child(3){animation-delay:0.2s}
+.who-pill:nth-child(4){animation-delay:0.3s}
+.who-pill:hover{
+  transform:translateX(6px);
+  border-color:rgba(245,90,0,0.4);
+  background:rgba(255,255,255,0.06);
+}
+.who-pill-icon{
+  transition:transform 0.3s cubic-bezier(.34,1.56,.64,1),background 0.3s ease;
+}
+.who-pill:hover .who-pill-icon{
+  transform:scale(1.12) rotate(-5deg);
+  background:rgba(245,90,0,0.22);
+}
+
+/* --- mission accent --- */
+.mission-accent{
+  transition:transform 0.3s ease,text-shadow 0.3s ease;
+  cursor:default;
+}
+.mission-accent:hover{
+  transform:scale(1.04);
+  text-shadow:0 0 24px rgba(245,90,0,0.5);
+}
+
+/* --- apart-card --- */
+.apart-card{
+  transition:transform 0.35s ease,border-color 0.35s ease,background 0.35s ease,box-shadow 0.35s ease;
+  animation:card-fade-in 0.7s ease both;
+}
+.apart-grid .apart-card:nth-child(1){animation-delay:0s}
+.apart-grid .apart-card:nth-child(2){animation-delay:0.08s}
+.apart-grid .apart-card:nth-child(3){animation-delay:0.16s}
+.apart-grid .apart-card:nth-child(4){animation-delay:0.24s}
+.apart-grid .apart-card:nth-child(5){animation-delay:0.32s}
+.apart-grid .apart-card:nth-child(6){animation-delay:0.4s}
+.apart-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(245,90,0,0.4);
+  background:rgba(255,255,255,0.06);
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+.apart-icon{
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),background 0.35s ease;
+}
+.apart-card:hover .apart-icon{
+  transform:scale(1.12) rotate(-5deg);
+  background:rgba(245,90,0,0.22);
+}
+.apart-card:hover h3{
+  color:var(--orange);
+  transition:color 0.3s ease;
+}
+
+/* --- stat-item --- */
+.stat-item{
+  transition:transform 0.3s ease,background 0.3s ease;
+}
+.stat-item:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,0.08);
+}
+.stat-n{
+  transition:transform 0.3s ease;
+}
+.stat-item:hover .stat-n{
+  transform:scale(1.08);
+}
+
+/* --- shared entrance keyframe (reused if not already defined) --- */
+@keyframes card-fade-in{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes hero-fade-in{
+  from{opacity:0;transform:translateY(30px) scale(0.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
 </style>
 <section class="about-breadcrumb">
-    <div class="breadcrumb-container">
-        <h1>About Us</h1>
-        <nav aria-label="breadcrumb">
-            <a href="/">Home</a>
-            <span class="breadcrumb-separator">
-                <i class="ti ti-chevron-right"></i>
-            </span>
-            <span>About Us</span>
-        </nav>
-    </div>
+   
 </section>
 <!-- HERO -->
 <section class="hero">
