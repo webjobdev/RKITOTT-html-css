@@ -286,36 +286,36 @@ padding-bottom: 15px !important;
 }
 
 .new-sec {
-  padding: 50px 130px 50px;
+  padding: 70px 130px 50px;
 }
 .service-sec {
-  padding: 50px 0px 50px;
+  padding: 70px 0px 50px;
 }
 
 @media (max-width: 991px) {
   .new-sec {
-    padding: 50px 100px 50px;
+    padding: 70px 100px 50px;
   }
   .service-sec {
-    padding: 50px 0px 50px;
+    padding: 70px 0px 50px;
   }
 }
 
 @media (max-width: 767px) {
   .new-sec {
-    padding: 50px 20px 50px;
+    padding: 70px 20px 50px;
   }
   .service-sec {
-    padding: 50px 0px 50px;
+    padding: 70px 0px 50px;
   }
 }
 
 @media (max-width: 480px) {
   .new-sec {
-    padding: 50px 15px 50px;
+    padding: 70px 15px 50px;
   }
   .service-sec {
-    padding: 50px 0px 50px;
+    padding: 70px 0px 50px;
   }
 }
 /* Built for OTT businesses */
@@ -1094,10 +1094,10 @@ padding-bottom: 15px !important;
 
 @media (max-width: 1024px) {
   .new-sec {
-    padding: 50px 60px 50px;
+    padding: 70px 60px 50px;
   }
   .service-sec {
-    padding: 50px 0px 50px;
+    padding: 70px 0px 50px;
   }
   .feat-item h4 {
     font-size: 24px;
@@ -1109,10 +1109,10 @@ padding-bottom: 15px !important;
 }
 @media (max-width: 768px) {
   .new-sec {
-    padding: 50px 30px 50px;
+    padding: 70px 30px 50px;
   }
   .service-sec {
-    padding: 50px 0px 50px;
+    padding: 70px 0px 50px;
   }
 }
 @media (max-width: 425px) {
